@@ -164,6 +164,16 @@ python eval_llm.py --weight full_sft --device cuda --max_new_tokens 128
 Choose `1` for interactive chat or `0` for automatic sample prompts. Change
 `--weight` to another output prefix, such as `dpo`, `grpo`, or `ppo_actor`.
 
+## Smaller model pilot
+
+A dense **17.21M-parameter** configuration (width 384, 8 layers) was trained and
+checked, using the existing tokenizer and training commands. It has **73.1%
+fewer parameters**; the distilled checkpoint is **37.54 MiB**.
+
+**This short pilot failed its quality target and is not a replacement for the
+current model.** See [Smaller-model results](docs/SMALL-MODEL.md) for measured
+tradeoffs, commands, and the next training decision. The default remains 768-wide.
+
 ## Validation status
 
 The following checks passed on **2026-09-11**:
